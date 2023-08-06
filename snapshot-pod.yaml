@@ -1,0 +1,13 @@
+# snapshot-pod.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: snapshot-pod
+  labels:
+    app: my-app-label
+spec:
+  containers:
+  - name: snapshot-container
+    image: your/snapshot-image:tag
+    # Add other necessary container configurations and ports as needed
+

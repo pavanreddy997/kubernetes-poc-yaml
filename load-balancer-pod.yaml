@@ -1,0 +1,13 @@
+# load-balancer-pod.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: load-balancer-pod
+  labels:
+    app: my-app-label
+spec:
+  containers:
+  - name: load-balancer-container
+    image: your/load-balancer-image:tag
+    # Add other necessary container configurations and ports as needed
+

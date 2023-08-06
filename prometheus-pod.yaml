@@ -1,0 +1,13 @@
+# prometheus-pod.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: prometheus-pod
+  labels:
+    app: my-app-label
+spec:
+  containers:
+  - name: prometheus-container
+    image: your/prometheus-image:tag
+    # Add other necessary container configurations and ports as needed
+

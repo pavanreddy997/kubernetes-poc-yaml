@@ -1,0 +1,20 @@
+# autoscale.yaml
+apiVersion: autoscaling/v2beta2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: your-hpa
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment  # Change to "StatefulSet" or "ReplicaSet" if you are not using a Deployment
+    name: your-deployment-name  # Replace with the name of your Deployment or StatefulSet
+  minReplicas: 2  # Minimum number of replicas when scaling down
+  maxReplicas: 10  # Maximum number of replicas when scaling up
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 50  # Target average CPU utilization percentage
+
